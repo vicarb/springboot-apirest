@@ -50,6 +50,11 @@ public class PersonaREST {
         personaService.delete(persona);
         return ResponseEntity.ok().build();
     }
+    @DeleteMapping(value = "{id}")
+    private ResponseEntity<Void> eliminarPersonaPorID (@RequestBody Persona persona){
+        personaService.delete(persona);
+        return ResponseEntity.ok().build();
+    }
 
     @GetMapping (value = "{id}")
     private ResponseEntity<Optional<Persona>> listarPersonasPorID (@PathVariable ("id") Long id){
